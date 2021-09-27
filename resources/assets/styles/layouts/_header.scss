@@ -6,7 +6,165 @@
   @extend .nav-link;
 }
 
+.navbar-expand-md .navbar-nav .nav-link,
+.navbar-expand-md .navbar-nav .banner .nav a,
+.banner .nav .navbar-expand-md .navbar-nav a {
+  @include media-breakpoint-up(lg) {
+    padding: 0 25px;
+  }
+}
+
 .banner {
   position: relative;
   width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 22;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.164);
+
+  @include media-breakpoint-down(md) {
+    justify-content: space-between !important;
+  }
+}
+
+.section__header {
+  padding: 0;
+
+  .menu-menu-header-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #menu-menu-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  #menu-menu-header-1 {
+    width: 100%;
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__logo img {
+    width: 100%;
+    max-width: 175px;
+  }
+
+  &__text {
+    color: #000;
+    font-size: 15px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 16px;
+    }
+  }
+
+  &__headerbutton a {
+    font-size: 12px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 16px;
+    }
+  }
+
+  &__icon {
+    padding: 0.5rem 1rem;
+    font-size: 24px;
+    color: #0477c3;
+  }
+
+  &__row {
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      justify-content: space-between;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &__mobileicon {
+    font-size: 24px;
+  }
+
+  &__mobilenav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__mobilenav i {
+    text-align: left;
+    width: 100%;
+    padding: 5px 0 15px 15px;
+  }
+
+  &__mobilenav .btn-primary {
+    width: 100%;
+    margin: 30px 0;
+    padding: 12px 0 12px 15px;
+    text-align: left;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 14px;
+    }
+  }
+
+  &__mobilenavitems {
+    width: 100%;
+  }
+
+  &__mobilenavitems a {
+    border-bottom: solid 1px #5757564f;
+    width: 100%;
+    padding: 30px 0 30px 15px !important;
+    color: theme-color("text-color");
+  }
+}
+
+.dropdown-menu {
+  margin: 0;
+  font-size: 1em;
+  border: none;
+  background-color: theme-color("light");
+
+  a {
+    border: none;
+    color: theme-color("text-color");
+  }
+}
+
+.search {
+  position: relative;
+  cursor: pointer;
+
+  i {
+    color: theme-color("dark");
+    font-size: 20px;
+  }
+
+  #searchform {
+    position: absolute;
+    bottom: -75px;
+    display: none;
+    right: 0;
+    background-color: #fff;
+    padding: 5px;
+
+    &.active {
+      display: flex;
+    }
+  }
 }
