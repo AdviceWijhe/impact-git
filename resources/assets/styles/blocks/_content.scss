@@ -1,0 +1,7 @@
+.content {
+  &__inner {
+    @include media-breakpoint-up(lg) {
+      width: 66.666%;
+    }
+  }
+}

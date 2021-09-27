@@ -1,0 +1,60 @@
+.section__hero {
+  height: 400px;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    height: 60vh;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 100vh;
+    max-height: 600px;
+  }
+
+  &__images {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &--image {
+      height: 400px;
+      background-size: cover;
+      background-position: center center;
+
+      @include media-breakpoint-up(md) {
+        height: 60vh;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 100vh;
+        max-height: 600px;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__titel {
+    h1 {
+      color: theme-color("primary");
+    }
+  }
+
+  &__subtitel {
+    h3 {
+      color: theme-color("secondary");
+    }
+  }
+
+  &__content {
+    color: #fff;
+  }
+}
