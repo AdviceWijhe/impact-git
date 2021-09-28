@@ -2,6 +2,8 @@
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
+@import "~flickity/dist/flickity";
+@import "~flickity-fade/flickity-fade";
 
 /**
  * Import npm dependencies

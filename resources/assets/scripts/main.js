@@ -4,6 +4,8 @@ import 'bootstrap/dist/js/bootstrap';
 
 // Import Slick
 import 'slick-carousel/slick/slick.min';
+import 'flickity/dist/flickity.pkgd.min';
+import 'flickity-fade/flickity-fade';
 
 // Import everything from autoload
 import './autoload/**/*'

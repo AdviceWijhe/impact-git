@@ -17,46 +17,27 @@
 
 @php
     $block = get_field("hero_gutenberg_block");
-    $block_titel = $block['hero_titel'];
-    $block_subtitel = $block['hero_subtitel'];
-    $block_content = $block['hero_content'];
-    $block_images = $block['hero_images'];
-    $block_navigation = $block['hero_navigation'];
+    $layout = $block['layout'];
+    $carousel_settings = $block['carousel_settings'];
+
+    if($layout == 'text-per-image') {
+        $images = $block['text_per_image']['images'];
+    }
+    else if($layout == 'single-text') {
+        $images = $block['single_text']['images'];
+        $title = $block['single_text']['title'];
+        $subtitle = $block['single_text']['subtitle'];
+        $content = $block['single_text']['content'];
+        $button = $block['single_text']['button'];
+    }
 @endphp
 
-<section class="section__hero">
-    <div class="section__hero__images">
-        @foreach($block_images as $image)
+<section class="hero p-0 {{$layout}}">
 
-            <div class="section__hero__images--image" style="background-image: url({{ $image['url'] }})">
-            
-            </div>
+    @include('blocks.layouts.hero.'.$layout)
 
-        @endforeach
-    </div>
-    <div class="container">
-        <div class="section__hero__titel">
-            <h1>{{ $block_titel }}</h1>
-        </div>
-        <div class="section__hero__subtitel">
-            <h3>{{ $block_subtitel }}</h3>
-        </div>
-        <div class="section__hero__content">
-            {!!$block_content !!}
-        </div>
-    </div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        jQuery('.section__hero__images').slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: {{($block_navigation['arrows'] ? 'true' : 'false')}},
-            dots: {{($block_navigation['dots'] ? 'true' : 'false')}},
-        });
-    });
-
-    </script>
 </section>
+
+
 
